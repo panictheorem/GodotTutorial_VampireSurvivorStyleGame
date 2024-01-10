@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0wga1r7vj570"]
+
+[ext_resource type="Script" path="res://scripts/Mob.cs" id="1_fecw2"]
+[ext_resource type="PackedScene" uid="uid://ogik4s70pgwl" path="res://characters/slime/slime.tscn" id="1_pm52a"]
+[ext_resource type="PackedScene" uid="uid://dhmhmrth6rdce" path="res://smoke_explosion/smoke_explosion.tscn" id="2_ma0qw"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5e5dv"]
+radius = 51.8941
+
+[node name="Mob" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_fecw2")
+SmokeExplosionScene = ExtResource("2_ma0qw")
+
+[node name="Slime" parent="." instance=ExtResource("1_pm52a")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -28)
+shape = SubResource("CircleShape2D_5e5dv")
